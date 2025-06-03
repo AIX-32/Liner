@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .container h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .container p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .container button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      background-color: #ab003e;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .container button:hover {
+      background-color: #880030;
+    }
+
+    .blob {
+      position: absolute;
+      width: 18rem;
+      height: 18rem;
+      background-color: rgba(171, 0, 62, 0.2);
+      border-radius: 68% 32% 45% 55% / 42% 58% 42% 58%;
+      filter: blur(50px);
+      animation: blobMorph 20s linear infinite, blobDrift1 12s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .blob2 {
+      background-color: rgba(171, 0, 62, 0.2);
+      animation: blobMorph 20s linear infinite, blobDrift2 14s ease-in-out infinite alternate;
+    }
+
+    @keyframes blobMorph {
+      0% {
+        transform: scale(1) rotate(0deg);
+        border-radius: 68% 32% 45% 55% / 42% 58% 42% 58%;
+      }
+      50% {
+        transform: scale(1.2) rotate(180deg);
+        border-radius: 45% 55% 68% 32% / 58% 42% 58% 42%;
+      }
+      100% {
+        transform: scale(1) rotate(360deg);
+        border-radius: 68% 32% 45% 55% / 42% 58% 42% 58%;
+      }
+    }
+
+    @keyframes blobDrift1 {
+      0% {
+        top: 20%;
+        left: 15%;
+      }
+      100% {
+        top: 25%;
+        left: 20%;
+      }
+    }
+
+    @keyframes blobDrift2 {
+      0% {
+        bottom: 10%;
+        right: 10%;
+      }
+      100% {
+        bottom: 15%;
+        right: 15%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blob" style="top: 20%; left: 15%;"></div>
+  <div class="blob blob2" style="bottom: 10%; right: 10%;"></div>
+
+  <div class="container">
+    <h1>Welcome to Liner</h1>
+    <p>your landscape based browser experience.</p>
+  </div>
+
+
+</body>
+</html>
